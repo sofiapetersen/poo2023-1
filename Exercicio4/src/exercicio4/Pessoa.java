@@ -6,7 +6,7 @@ package exercicio4;
 
 /**
  *
- * @author User
+ * @author @sofiapetersen
  */
 public class Pessoa {
 
@@ -14,7 +14,8 @@ public class Pessoa {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Cadastro c = new Cadastro(10);
+        System.out.println("Comprimento do vetor: " + c.tamanhoLista());
     }
     
 }

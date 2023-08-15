@@ -8,8 +8,14 @@ package zaffari;
  *
  * @author sofia
  */
-public interface Autenticavel {
+public class Estocadista extends Funcionario {
     
-    boolean autenticar(int senha);
+    public Estocadista(double salario){
+        super(salario);
+    }
     
+    @Override
+    public String toString(){
+        return "Salario Estocadista: " + super.toString();
+    }
 }

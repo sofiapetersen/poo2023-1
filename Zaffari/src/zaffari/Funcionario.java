@@ -8,8 +8,17 @@ package zaffari;
  *
  * @author sofia
  */
-public interface Autenticavel {
+public abstract class Funcionario {
+    private double salario;
     
-    boolean autenticar(int senha);
+    public Funcionario(double salario){
+        this.salario = salario;
+    }
+    
+    @Override
+    public String toString(){
+        return "" + salario;
+    }
+    
     
 }

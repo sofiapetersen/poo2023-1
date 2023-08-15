@@ -14,7 +14,7 @@ import java.util.Comparator;
  * @author sofiapetersen
  */
 public class BlocoDeLembretes {
-    private List<Lembretes> lista;
+    private final List<Lembretes> lista;
     
     public BlocoDeLembretes() {
         lista = new ArrayList<>();

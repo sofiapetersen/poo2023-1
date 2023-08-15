@@ -11,9 +11,9 @@ import java.time.LocalDate;
  * @author sofiapetersen
  */
 public class Data {
-    private int dia;
-    private int mes;
-    private int ano;
+    private final int dia;
+    private final int mes;
+    private final int ano;
     private static final String[] meses = {"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"};
     
     public Data(int dia, int mes, int ano){
@@ -65,8 +65,7 @@ public class Data {
         if (this == o){
             return true;
         }
-        if(o instanceof Data){
-            Data outraData = (Data) o;
+        if(o instanceof Data outraData){
             if(this.ano == outraData.ano && this.mes == outraData.mes && this.ano == outraData.ano);{
             return true;
             }

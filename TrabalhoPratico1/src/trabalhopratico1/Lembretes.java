@@ -13,8 +13,8 @@ import java.util.Scanner;
  */
 public class Lembretes {
     
-    private String descricao;
-    private Data data;
+    private final String descricao;
+    private final Data data;
     
     public Lembretes(String descricao, int dia, int mes, int ano) {
         this.descricao = descricao;

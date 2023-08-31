@@ -40,7 +40,7 @@ public class AnotacoesAppGUI extends JFrame {
     private JLabel dataField;
     private final JButton detalhesNotaButton;
     private int paginaAtual = 1;
-    private int notasPorPagina = 2;
+    private int notasPorPagina = 5;
     private final JButton paginaAnteriorButton;
     private final JButton proximaPaginaButton;
 
@@ -191,7 +191,7 @@ public class AnotacoesAppGUI extends JFrame {
                 int totalPaginas = (int) Math.ceil((double) anotacoesApp.getLista().size() / notasPorPagina);
                 if (paginaAtual < totalPaginas) {
                     paginaAtual++;
-                    paginaAtualNotas.setNotaSelecionadaIndex(0); 
+                    paginaAtualNotas.setNotaSelecionadaIndex(paginaAtual-1); 
                     atualizarListaAnotacoes();
                     int selectedIndex = (paginaAtual - 1) * notasPorPagina;
                     if (selectedIndex < anotacoesApp.getLista().size()) {
@@ -217,7 +217,7 @@ public class AnotacoesAppGUI extends JFrame {
     public void actionPerformed(ActionEvent e) {
         int selectedIndex = anotacoesList.getSelectedIndex();
         if (selectedIndex != -1) {
-            Anotacao notaSelecionada = anotacoesApp.getLista().get(selectedIndex);
+            Anotacao notaSelecionada = anotacoesApp.getLista().get(selectedIndex + ((paginaAtual-1)*5));
             DetalhesNotaDialog detalhesDialog = new DetalhesNotaDialog(AnotacoesAppGUI.this, notaSelecionada);
             detalhesDialog.setVisible(true);
         }
@@ -240,7 +240,7 @@ public class AnotacoesAppGUI extends JFrame {
     public void actionPerformed(ActionEvent e) {
         int selectedIndex = anotacoesList.getSelectedIndex();
         if (selectedIndex != -1) {
-            Anotacao notaSelecionada = anotacoesApp.getLista().get(selectedIndex);
+            Anotacao notaSelecionada = anotacoesApp.getLista().get(selectedIndex + ((paginaAtual-1)*5));
 
             
             LocalDate dataAtual = LocalDate.now();
